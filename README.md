@@ -147,6 +147,10 @@ We perform inverse perspective transform and use the OpenCV function `cv2.addWei
 ##### Lane Identified
 ![](output_images/final_marked.jpg)
 
+Pipeline
+---
+[link to my video result](./project_video_output.mp4)
+
 Reflection
 ---
 The above method worked perfectly for the project video, okayish for the challenge video and horribly in the harder challenge. The easier way to optimize was to use different sets of parameters but that isn't advisable for real world since we can use only 1 set of hyperparameters. May be better tuning for lane detection etc.
