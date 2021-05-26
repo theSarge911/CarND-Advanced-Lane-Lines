@@ -38,14 +38,14 @@ For some cases the above step fails when the chessboard doesn't have the expecte
 ##### Distorted Chessboard Image:
 ![](output_images/calibration_chessboard_original.jpg)
 
-#####Undistorted Chessboard Image
+##### Undistorted Chessboard Image
 ![](output_images/calibration_chessboard_calibrated.jpg)
 
 As you can see the fringing towards the corners are corrected. Another real life example:
 ##### Distorted Image:
 ![](output_images/calibration_original.jpg)
 
-#Undistorted Image
+##### Undistorted Image
 ![](output_images/calibration_calibrated.jpg)
 
 Perspective transformation
@@ -64,11 +64,11 @@ warped = cv2.warpPerspective(img, M, img_size)
 ```
 The actual implementation uses an additional parameter `inv` to handle inverse Perspective Transform in the same function.
 
-##Example:
-#Original Image:
+#### Example:
+##### Original Image:
 ![](output_images/perspectivetransform_original.jpg)
 
-#Warped Image
+##### Warped Image
 ![](output_images/perspectivetransform_warped.jpg)
 
 Lane Detection
@@ -82,11 +82,11 @@ x3 = singlechannel_threshold((extract_hls(img))[2] , thresh = (80,200), normaliz
 ```
 Since these thresholds were sufficiently good we refrained from using sobel filter which added noise if there are imperfections in the road. It can be probably be tuned better.
 
-##Example:
-#Original Image:
+#### Example:
+##### Original Image:
 ![](output_images/lanedetection_original.jpg)
 
-#Binary Image
+##### Binary Image
 ![](output_images/lanedetection_binary.jpg)
 
 Implement sliding windows and fit a polynomial
@@ -128,25 +128,25 @@ self.left_offcentre = np.absolute((self.width // 2 - left_fit_cr[-1]) * xm_per_p
 self.right_offcentre = np.absolute((self.width // 2 - right_fit_cr[-1]) * xm_per_pix)
 ```
 
-##Example:
-#Binary Image:
+#### Example:
+##### Binary Image:
 ![](output_images/lanedetection_binary.jpg)
 
-#Lane Identification Image
+##### Lane Identification Image
 ![](output_images/lanetracing_identification.jpg)
 
-#Lane tracing:
+##### Lane tracing:
 ![](output_images/lanedetection_trace.jpg)
 
 Inverse Perspective Transform and overlay
 ---
 We perform inverse perspective transform and use the OpenCV function `cv2.addWeighted` to overlay the lanes to show the lanes in the final output. To show data we have made a separate function that adds radius of curvature and offcenter distance to the displaying frames.
 
-## Example:
-# Original Image:
+#### Example:
+##### Original Image:
 ![](output_images/laneoverlay_original.jpg)
 
-# Lane Identified
+##### Lane Identified
 ![](output_images/laneoverlay_marked.jpg)
 
 Reflection
