@@ -145,7 +145,7 @@ We perform inverse perspective transform and use the OpenCV function `cv2.addWei
 ![](output_images/laneoverlay_original.jpg)
 
 ##### Lane Identified
-![](output_images/laneoverlay_marked.jpg)
+![](output_images/final_marked.jpg)
 
 Reflection
 ---
